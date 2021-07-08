@@ -51,7 +51,7 @@ const add = new Vue(
                         });
                         clearInterval(this.clock);
                     }                    
-                }, 1000);
+                }, 100);
             }
         }
     }
