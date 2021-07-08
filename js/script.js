@@ -5,8 +5,9 @@ const add = new Vue(
         el: '#app',
         data: {
             emails: [],
-            maxEmail: 5, 
-            newEmails: []
+            maxEmail: 10, 
+            newEmails: [],
+            clock: null
         },
         created() {
             this.populateEmails(this.maxEmail)
@@ -20,9 +21,9 @@ const add = new Vue(
             generateEmail: function () {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then((response) => {
-                        let email = response.data.response;
-                        console.log(email);
-                        this.emails.push(email);
+                        // let email = response.data.response;
+                        // console.log(email);
+                        this.emails.push(response.data.response);
                     })
             },
             populateEmails: function (num) {
